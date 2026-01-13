@@ -11,14 +11,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(title: const Text("Live Toggle Example")),
-        body: const Center(
-          child: DbrandSkinSelection(),
-        ),
-      ),
+      home: DbrandSkinSelection(),
     );
   }
 }
