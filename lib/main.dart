@@ -4,6 +4,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'dbrand_skin_selection/dbrand_skin_selection.dart';
 import 'grammarly_recreate/presentation/home_page.dart';
+import 'page_flip/page_flip_demo.dart';
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));
@@ -54,6 +55,15 @@ class _Home extends StatelessWidget {
                   MaterialPageRoute(
                     builder: (context) => const GrammarlyRecreateHome(),
                   ),
+                );
+              },
+            ),
+            _HomeButton(
+              title: 'Page Flip',
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const PageFlipDemo()),
                 );
               },
             ),

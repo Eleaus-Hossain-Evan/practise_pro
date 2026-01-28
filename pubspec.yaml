@@ -75,6 +75,7 @@ flutter:
     - assets/dbrand_skin_selection/
     - assets/grammarly_recreate/icons/
     - assets/grammarly_recreate/images/
+    - assets/page_flip/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -14,6 +14,7 @@
 |:-:|---------|----------------------|
 | 1 | [DBrand Skin Selection](#-dbrand-skin-selection) | Custom Clipper, Animations, Color Blending |
 | 2 | [Grammarly Writing Assistant](#-grammarly-writing-assistant) | State Management, Text Selection, Modal Bottom Sheet |
+| 3 | [Page Flip Animation](#-page-flip-animation) | 3D Transforms, Matrix4, AnimationController, Theme Switching |
 
 
 ---
@@ -62,6 +63,28 @@
 
 ---
 
+### 📖 Page Flip Animation
+
+<p align="center">
+  <img src="assets/screenshots/page_flip_demo.gif" alt="Page Flip Animation Demo" width="300"/>
+</p>
+
+**Inspired by:** Physical book page flipping with 3D perspective effect
+
+**Techniques demonstrated:**
+- ✅ `Matrix4.rotationY()` for 3D rotation transforms around Y-axis
+- ✅ `Matrix4.setEntry(3, 0, tilt)` for perspective tilt effect
+- ✅ `AnimationController` with `SingleTickerProviderStateMixin` for flip animation
+- ✅ `AnimatedBuilder` for efficient animation rebuilds
+- ✅ Dynamic widget switching between front/back pages based on animation value
+- ✅ Theme switching between light and dark modes during flip
+- ✅ `GlobalKey` for programmatic state access across widget tree
+- ✅ SVG asset precaching with `flutter_svg` for smooth rendering
+- ✅ Mathematical animation phases (first half vs second half at 0.5 threshold)
+- ✅ Transform alignment for proper rotation origin
+
+---
+
 ## 🛠️ Tech Stack
 
 | Category | Technology |
@@ -80,7 +103,7 @@ lib/
 ├── dbrand_skin_selection/                 # Feature module
 │   ├── dbrand_skin.dart                   # Data model
 │   └── dbrand_skin_selection.dart         # UI implementation
-└── grammarly_recreate/                    # Feature module (Clean Architecture)
+├── grammarly_recreate/                    # Feature module (Clean Architecture)
     ├── application/                       # State management (Riverpod)
     │   └── text_assistant_provider.dart   # Text selection state notifier
     ├── domain/                            # Business logic
@@ -94,6 +117,10 @@ lib/
             ├── writing_assistant_bottom_sheet.dart
             ├── action_chip.dart
             └── text_action_button.dart
+└── page_flip/                             # Feature module
+    ├── app_asset.dart                     # Asset path constants
+    ├── page_flip_builder.dart             # 3D flip animation widget
+    └── page_flip_demo.dart                # Light/Dark theme pages
 
 assets/
 ├── dbrand_skin_selection/                 # Feature assets
@@ -102,6 +129,10 @@ assets/
 ├── grammarly_recreate/                    # Feature assets
 │   ├── icons/                             # SVG icons
 │   └── images/                            # UI images
+├── page_flip/                             # Feature assets
+│   ├── forest-day.svg                     # Day theme illustration
+│   ├── forest-night.svg                   # Night theme illustration
+│   └── man.svg                            # Profile icon
 └── screenshots/                           # Demo GIFs & images
 ```
 
