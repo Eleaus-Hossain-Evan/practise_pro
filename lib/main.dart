@@ -7,7 +7,11 @@ import 'grammarly_recreate/presentation/home_page.dart';
 import 'page_flip/page_flip_demo.dart';
 
 void main() {
-  runApp(const ProviderScope(child: MyApp()));
+  runApp(
+    const ProviderScope(
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -17,9 +21,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       minTextAdapt: true,
-      builder: (context, child) {
-        return MaterialApp(debugShowCheckedModeBanner: false, home: _Home());
-      },
+      builder: (context, child) => MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: _Home(),
+      ),
     );
   }
 }
@@ -90,6 +95,6 @@ class _HomeButton extends StatelessWidget {
       ),
       onPressed: onPressed,
       child: Text(title),
-    );
+    ); 
   }
 }
